@@ -1,0 +1,12 @@
+{
+  "name": "hltv-api-serverless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hx-w/hltv-api-serverless",
+  "author": "hx-w",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "hltv-api": "^3.0.0"
+  }
+}
