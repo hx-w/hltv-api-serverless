@@ -1,0 +1,31 @@
+component: http
+name: http-express-fQcj-IrS7
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+  faas:
+    framework: express
+    name: '${name}'
+    runtime: Nodejs12.16
+    eip: true
+    timeout: 3
+    memorySize: 512
+    tags: []
+    environments: []
+    layers:
+      - name: '${output:${stage}:${app}:hltv-api-layer.name}'
+        version: '${output:${stage}:${app}:hltv-api-layer.version}'
+  apigw:
+    protocols:
+      - http
+      - https
+    timeout: 60
+    environment: release
+    customDomains: []
+  region: ap-chengdu
+  isAutoCiDeploy: false
+org: '1256946954'
+app: hltv-api
+stage: prod
