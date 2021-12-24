@@ -22,10 +22,17 @@ app.get('/teams', async (req, res) => {
     res.json(await HLTV.getTopTeams())
 })
 
-app.get('/player', async (req, res) => {
+app.get('/player/:playerId', async (req, res) => {
     res.json(await HLTV.getPlayerById(req.params.playerId))
 })
 
+app.get('/stats/:matchId', async (req, res) => {
+    res.json(await HLTV.getMatchById(req.params.matchId))
+})
+
+app.get('/team/:teamId', async (req, res) => {
+    res.json(await HLTV.getTeamById(req.params.teamId))
+})
 
 // Error handler
 app.use(function (err, req, res, next) {
