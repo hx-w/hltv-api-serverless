@@ -23,7 +23,7 @@ app.get('/teams', async (req, res) => {
 })
 
 app.get('/player', async (req, res) => {
-    res.json(await HLTV.getPlayerById(req.params().playerId))
+    res.json(await HLTV.getPlayerById(req.params.playerId))
 })
 
 
