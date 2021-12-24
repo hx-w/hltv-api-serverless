@@ -5,6 +5,7 @@ exports.handler = async function(event, context) {
         const results = await HLTV.getResults()
         return {
             statusCode: 200,
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify(results)
         }
     }
