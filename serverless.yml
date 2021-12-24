@@ -8,7 +8,7 @@ inputs:
   faas:
     framework: express
     name: '${name}'
-    runtime: Nodejs12.16
+    runtime: Nodejs17.3.0
     eip: true
     timeout: 3
     memorySize: 512

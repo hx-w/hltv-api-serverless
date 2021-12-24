@@ -15,7 +15,12 @@ app.get('/results', async (req, res) => {
 })
 
 app.get('/players', async (req, res) => {
-    res.json(await HLTV.getTopPlayers())
+    try {
+        res.json(await HLTV.getTopPlayers())
+    }
+    catch (err) {
+        res.json({'detail': `err: ${err}`})
+    }
 })
 
 app.get('/teams', async (req, res) => {
