@@ -31,7 +31,7 @@ app.get('/results', async (req, res) => {
 
 app.get('/players', async (req, res) => {
     try {
-        res.json(await HLTV.getTopPlayers())
+        res.json(await getTopPlayers())
     }
     catch (err) {
         res.status(403).send({ 'detail': `err: ${err}` })
