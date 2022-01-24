@@ -8,6 +8,6 @@
   "private": false,
   "devDependencies": {
     "express": "^4.17.2",
-    "hltv-api": "^3.0.0"
+    "hltv": "^3.3.3"
   }
 }
