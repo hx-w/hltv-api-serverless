@@ -1,13 +1,14 @@
-const HLTV = require('hltv-api').default
+const HLTV = require('hltv').default
 
 exports.handler = async function(event, context) {
     try {
-        const results = await HLTV.getResults()
-        return {
-            statusCode: 200,
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(results)
-        }
+        HLTV.getResults().then(res => {
+            return {
+                statusCode: 200,
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(res)
+            }
+        })
     }
     catch(err) {
         return {

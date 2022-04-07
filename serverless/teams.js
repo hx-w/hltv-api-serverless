@@ -1,19 +1,20 @@
-const HLTV = require('hltv-api').default
+const HLTV = require('hltv').default
 
-exports.handler = async function(event, context) {
+exports.handler = async function (event, context) {
     try {
-        const teams = await HLTV.getTopTeams()
-        return {
-            statusCode: 200,
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(teams)
-        }
+        HLTV.getTeamRanking().then(res => {
+            return {
+                statusCode: 200,
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(res)
+            }
+        })
     }
-    catch(err) {
+    catch (err) {
         return {
             statusCode: 403,
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({'detail': `${err}`})
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ 'detail': `${err}` })
         }
     }
 }
