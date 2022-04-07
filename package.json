@@ -6,8 +6,8 @@
   "author": "hx-w",
   "license": "MIT",
   "private": false,
-  "devDependencies": {
-    "hltv": "^3.3.3",
-    "hltv-api": "^3.0.0"
+  "devDependencies": {},
+  "dependencies": {
+    "hltv": "^3.4.0"
   }
 }
